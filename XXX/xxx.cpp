@@ -38,5 +38,6 @@ void PlayGame() {
 }
 
 int main() {
+    PlayGame();
     return 0;
 }
