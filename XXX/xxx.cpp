@@ -10,9 +10,9 @@ bool PlayGame(int Difficulty) {
 
     GameIntro(Difficulty);
     // declare a 3 number code
-    const int Code1 = rand();
-    const int Code2 = rand();
-    const int Code3 = rand();
+    const int Code1 = (rand() % Difficulty) + Difficulty;
+    const int Code2 = (rand() % Difficulty) + Difficulty;
+    const int Code3 = (rand() % Difficulty) + Difficulty;
 
     // these values generate the puzzle to solve
     const int CodeSum = Code1 + Code2 + Code3;
@@ -47,7 +47,7 @@ bool PlayGame(int Difficulty) {
 int main() {
 
     int LevelDifficulty = 1;
-    const int MaxDifficulty = 2;
+    const int MaxDifficulty = 5;
 
     while(LevelDifficulty <= MaxDifficulty) {
 
