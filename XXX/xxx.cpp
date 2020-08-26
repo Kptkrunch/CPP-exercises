@@ -1,7 +1,7 @@
 #include <iostream>
 
 void GameIntro(int Difficulty) {
-    std::cout << "A bomb is about to go off and you need to disarm it... \n";
+    std::cout << "The mad bomber has planted a bomb and you need to disarm it... \n";
     std::cout << "You need to punch in the correct code or it will explode!\n";
     std::cout << "This is a challenge level: " << Difficulty << " bomb device\n\n";
 }
@@ -10,9 +10,9 @@ bool PlayGame(int Difficulty) {
 
     GameIntro(Difficulty);
     // declare a 3 number code
-    const int Code1 = 3;
-    const int Code2 = 5;
-    const int Code3 = 7;
+    const int Code1 = rand();
+    const int Code2 = rand();
+    const int Code3 = rand();
 
     // these values generate the puzzle to solve
     const int CodeSum = Code1 + Code2 + Code3;
@@ -36,7 +36,7 @@ bool PlayGame(int Difficulty) {
     std::cout << std::endl;
     
     if (GuessSum == CodeSum && GuessProd == CodeProd) {
-        std::cout << "You Win!!! \n\n";
+        std::cout << "You have stopped the bomber this time, but he isn't done yet!!! \n\n";
         return true;
     } else {
         std::cout << "You have been exploded!!! \n\n";
@@ -47,8 +47,9 @@ bool PlayGame(int Difficulty) {
 int main() {
 
     int LevelDifficulty = 1;
+    const int MaxDifficulty = 2;
 
-    while(true) {
+    while(LevelDifficulty <= MaxDifficulty) {
 
         bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear(); // clears any errors
@@ -58,5 +59,7 @@ int main() {
             ++LevelDifficulty;
         }
     }
+    std::cout << "You have stopped the mad bomber from destroying the city!\n";
+    std::cout << "The city and its people are saved thanks to your heroic efforts!";
     return 0;
 }
