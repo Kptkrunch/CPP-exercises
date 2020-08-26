@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 void GameIntro(int Difficulty) {
     std::cout << "The mad bomber has planted a bomb and you need to disarm it... \n";
@@ -45,7 +46,8 @@ bool PlayGame(int Difficulty) {
 }
 
 int main() {
-
+    srand(time(NULL));
+    
     int LevelDifficulty = 1;
     const int MaxDifficulty = 5;
 
