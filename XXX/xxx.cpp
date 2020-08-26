@@ -1,9 +1,13 @@
 #include <iostream>
 
-void PlayGame() {
+void GameIntro() {
     std::cout << "A bomb is about to go off and you need to disarm it... \n";
     std::cout << "You need to punch in the correct code or it will explode!\n \n";
+}
 
+void PlayGame() {
+    
+    GameIntro();
     // declare a 3 number code
     const int Code1 = 3;
     const int Code2 = 5;
@@ -38,6 +42,7 @@ void PlayGame() {
 }
 
 int main() {
+
     PlayGame();
     return 0;
 }
