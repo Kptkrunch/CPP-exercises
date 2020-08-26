@@ -1,13 +1,14 @@
 #include <iostream>
 
-void GameIntro() {
+void GameIntro(int Difficulty) {
     std::cout << "A bomb is about to go off and you need to disarm it... \n";
-    std::cout << "You need to punch in the correct code or it will explode!\n \n";
+    std::cout << "You need to punch in the correct code or it will explode!\n";
+    std::cout << "This is a challenge level: " << Difficulty << " bomb device\n\n";
 }
 
-void PlayGame() {
-    
-    GameIntro();
+bool PlayGame(int Difficulty) {
+
+    GameIntro(Difficulty);
     // declare a 3 number code
     const int Code1 = 3;
     const int Code2 = 5;
@@ -35,14 +36,27 @@ void PlayGame() {
     std::cout << std::endl;
     
     if (GuessSum == CodeSum && GuessProd == CodeProd) {
-        std::cout << "You Win!!!";
+        std::cout << "You Win!!! \n\n";
+        return true;
     } else {
-        std::cout << "You have been exploded!!!";
+        std::cout << "You have been exploded!!! \n\n";
+        return false;
     }
 }
 
 int main() {
 
-    PlayGame();
+    int LevelDifficulty = 1;
+
+    while(true) {
+
+        bool bLevelComplete = PlayGame(LevelDifficulty);
+        std::cin.clear(); // clears any errors
+        std::cin.ignore(); // discards the buffer
+
+        if (bLevelComplete) {
+            ++LevelDifficulty;
+        }
+    }
     return 0;
 }
