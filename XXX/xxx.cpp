@@ -1,10 +1,8 @@
 #include <iostream>
 
 int main() {
-    std::cout << "A bomb is about to go off and you need to disarm it... ";
-    std::cout << std::endl;
-    std::cout << "You need to punch in the correct code or it will explode!";
-    std::cout << std::endl;
+    std::cout << "A bomb is about to go off and you need to disarm it... \n";
+    std::cout << "You need to punch in the correct code or it will explode!\n \n";
 
     // declare a 3 number code
     const int Code1 = 3;
@@ -16,8 +14,7 @@ int main() {
     const int CodeProd = Code1 * Code2* Code3;
 
     // print the product and the sum to the console
-    std::cout << std::endl;
-    std::cout << "+ There are three numbers needed to difuse the bomb. " << std::endl;
+    std::cout << "+ There are three numbers needed to difuse the bomb. \n";
     std::cout << "+ The code adds up to: " << CodeSum << std::endl;
     std::cout << "+ The numbers multiply to give: " << CodeProd << std::endl;
 
