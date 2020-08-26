@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main() {
+void PlayGame() {
     std::cout << "A bomb is about to go off and you need to disarm it... \n";
     std::cout << "You need to punch in the correct code or it will explode!\n \n";
 
@@ -35,7 +35,8 @@ int main() {
     } else {
         std::cout << "You have been exploded!!!";
     }
+}
 
-
+int main() {
     return 0;
 }
